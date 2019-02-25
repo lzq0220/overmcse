@@ -1,7 +1,7 @@
 provider "vsphere" {
-  user           = "administrator@vsphere.local"
-  password       = "Hnky@1234"
-  vsphere_server = "192.168.10.11"
+    user           = "root"
+  password       = "1234567"
+  vsphere_server = "192.168.10.3"
 
   # If you have a self-signed cert
   allow_unverified_ssl = true
@@ -10,16 +10,6 @@ provider "vsphere" {
 data "vsphere_datacenter" "dc" {
   name = "Datacenter"
 
-}
-
-data "vsphere_compute_cluster" "cluster" {
-  name          = "Cluster"
-  datacenter_id = "${data.vsphere_datacenter.dc.id}"
-}
-
-data "vsphere_virtual_machine" "template" {
-  name          = "Ubuntu1604"
-  datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_datastore" "datastore" {
