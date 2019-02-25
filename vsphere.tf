@@ -8,7 +8,8 @@ provider "vsphere" {
 }
 
 data "vsphere_datacenter" "dc" {
-  name = "DataCenter"
+  name = "Datacenter"
+
 }
 
 data "vsphere_compute_cluster" "cluster" {
