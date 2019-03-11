@@ -3,8 +3,8 @@ resource "vsphere_virtual_machine" "vm" {
   resource_pool_id = "${data.vsphere_compute_cluster.cluster.resource_pool_id}"
   datastore_id     = "${data.vsphere_datastore.datastore.id}"
 
-  num_cpus = 1 
-  memory   = 2048
+  num_cpus = 2 
+  memory   = 4048
   guest_id = "${data.vsphere_virtual_machine.template.guest_id}"
 
  # scsi_type = "${data.vsphere_virtual_machine.template.scsi_type}"
@@ -32,7 +32,7 @@ resource "vsphere_virtual_machine" "vm" {
       }
 
       network_interface {
-        ipv4_address = "192.168.10.110"
+        ipv4_address = "192.168.10.111"
         ipv4_netmask = 24
       }
 
